@@ -13,11 +13,12 @@ function User({ details }) {
       <p>Civil: {details.civil}</p>
 
       {
-        !!details.hobbies && !!details.hobbies.length &&
+        !!details.terms && !!details.terms.length &&
         <div>
-          Hobbies:
+          Terms of Use:
           <ul>
-            {details.hobbies.map((like, idx) => <li key={idx}>{like}</li>)}
+            {details.termsOfUse.map((like, idx) => <li key={idx}>{like}</li>)}
+            
           </ul>
         </div>
       }

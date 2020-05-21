@@ -15,7 +15,7 @@ export default function Form(props) {
   return (
     <form className='form container' onSubmit={onSubmit}>
       <div className='form-group submit'>
-        <h2>Add a Friend</h2>
+        <h2>Add a User</h2>
 
        
         <button disabled={disabled}>submit</button>
@@ -89,35 +89,19 @@ export default function Form(props) {
       </div>
 
       <div className='form-group checkboxes'>
-        <h4>Hobbies</h4>
+        <h4>Terms of Use</h4>
 
       
-        <label>Hiking
+        <label>Terms of Use
           <input
             type='checkbox'
-            name='hiking'
-            checked={values.hobbies.hiking}
+            name='termsOfUse'
+            checked={values.termsOfUse.terms}
             onChange={onCheckboxChange}
           />
         </label>
 
-        <label>Reading
-          <input
-            type='checkbox'
-            name='reading'
-            checked={values.hobbies.reading}
-            onChange={onCheckboxChange}
-          />
-        </label>
-
-        <label>Coding
-          <input
-            type='checkbox'
-            name='coding'
-            checked={values.hobbies.coding}
-            onChange={onCheckboxChange}
-          />
-        </label>
+       
       </div>
     </form>
   )
