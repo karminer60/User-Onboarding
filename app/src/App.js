@@ -55,7 +55,7 @@ export default function App() {
 
   const postNewUser= newUser=> {
    
-    axios.post('_https://reqres.in/api/users_', newUser)
+    axios.post('http://localhost:4000/friends', newUser)
       .then(res => {
         setUsers([res.data, ...users])
         
@@ -73,21 +73,19 @@ export default function App() {
     const name = evt.target.name
     const value = evt.target.value
 
-    // 🔥 STEP 12- RUN VALIDATION WITH YUP
     yup
       .reach(formSchema, name)
-      // we can then run validate using the value
+
       .validate(value)
       .then(valid => {
-        // happy path, we can clear the error message
+     
         setFormErrors({
           ...formErrors,
           [name]: ''
         })
       })
       .catch(err => {
-        // sad path, does not validate so we set the error message to the message 
-        // returned from yup (that we created in our schema)
+        
         setFormErrors({
           ...formErrors,
           [name]: err.errors[0]
@@ -126,11 +124,11 @@ export default function App() {
       role: formValues.role,
       civil: formValues.civil,
       
-      termsofUse: Object.keys(formValues.termsOfUse)
-        .filter(item => formValues.termsOfUse[item] === true)
+      termsOfUse: formValues.termsOfUse
     }
   
     postNewUser(newUser)
+    debugger
   }
 
   
