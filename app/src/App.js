@@ -20,10 +20,9 @@ const initialFormValues = {
  
   civil: '',
   
-  termsOfUse: {
-    terms: false,
+  termsOfUse: false,
     
-  },
+  
 }
 const initialFormErrors = {
   username: '',
@@ -103,7 +102,7 @@ export default function App() {
   }
 
   const onCheckboxChange = evt => {
-  
+    debugger;
     const { name } = evt.target
   
     const { checked } = evt.target
@@ -111,13 +110,10 @@ export default function App() {
     setFormValues({
      
       ...formValues,
+    
+        
+      [name]: checked, 
       
-      termsOfUse: {
-        
-        ...formValues.termsOfUse,
-        
-        [name]: checked, 
-      }
     })
   }
 
