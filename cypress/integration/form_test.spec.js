@@ -1,4 +1,8 @@
 describe('Form inputs', () => {
+    it('can navigate to the site', () => {
+        cy.visit('http://localhost:3000')
+        cy.url().should('include', 'localhost')
+      })
 
     it('can type a username', () => {
         cy.get('input[name="username"]')
@@ -17,6 +21,19 @@ describe('Form inputs', () => {
             .type('12345')
             
     })
+
+    it('checkbox verification', ()=>{
+        cy.get('[type="checkbox"]').check()
+            
+    })
+
+    it('submit form verification', ()=>{
+        cy.get('form').submit()
+            
+    })
+
+    
+
 })
 
 describe('Form validation', () => {
