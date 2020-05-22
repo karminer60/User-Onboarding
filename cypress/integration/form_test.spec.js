@@ -39,7 +39,7 @@ describe('Form inputs', () => {
 describe('Form validation', () => {
     it('validates username correctly', () => {
 
-        cy.get('input[name="username"]').type('karina')
+        cy.get('input[name="username"]').type('')
 
     })
 })
