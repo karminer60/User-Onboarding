@@ -24,6 +24,7 @@ export default function Form(props) {
           
           <div>{errors.username}</div>
           <div>{errors.email}</div>
+          <div>{errors.password}</div>
           <div>{errors.role}</div>
           <div>{errors.civil}</div>
         </div>
@@ -48,6 +49,15 @@ export default function Form(props) {
             onChange={onInputChange}
             name='email'
             type='email'
+          />
+        </label>
+
+        <label>Password
+          <input
+            value={values.password}
+            onChange={onInputChange}
+            name='password'
+            type='password'
           />
         </label>
 
